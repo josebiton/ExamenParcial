@@ -27,6 +27,13 @@ public class EditorialController {
       Editorial editorial=editorialService.findById(id);
         return ResponseEntity.ok(editorial);
     }
+    @ApiOperation (value = "Modifica los editoriales")
+    @GetMapping ("/update")
+
+    public Editorial update (@RequestBody Editorial editorial){
+    return editorialService.save(editorial);
+}
+    
     @ApiOperation(value = "Crea un registro")
     @PostMapping
     public Editorial save(@RequestBody Editorial editorial) {

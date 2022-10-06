@@ -32,6 +32,12 @@ public class LibroController {
     public Libro save(@RequestBody Libro libro) {
         return libroService.save(libro);
     }
+    @ApiOperation (value = "Modifica los datos de los libros")
+    @GetMapping ("/update")
+
+public Libro update (@RequestBody Libro editorial){
+    return libroService.save(editorial);
+}
     @ApiOperation(value = "Elimina un registro")
     @DeleteMapping(value = "/{id}")
     public void deleteById(@PathVariable Long id) {
